@@ -8,16 +8,7 @@ pipeline {
        CGO_ENABLED = 0 
        GOPATH = "${JENKINS_HOME}/jobs/${JOB_NAME}/builds/${BUILD_ID}"
     }
-    stages {        
-        stage('Pre Test') {
-            steps {
-                echo 'Installing dependencies'
-                sh 'go version'
-                sh 'go get -u golang.org/x/lint/golint'
-            }
-        }
-        
-        stage('Build') {
+       stage('Build') {
             steps {
                git url: 'https://github.com/barathtech/golang-examples.git'    
             }
