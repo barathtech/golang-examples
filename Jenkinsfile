@@ -11,7 +11,7 @@ pipeline {
      stages { 
        stage('Build') {
             steps {
-               git url: 'https://github.com/barathtech/golang-examples.git'    
+               git url: https://github.com/barathtech/helloworld-web-go.git    
             }
         }
 
@@ -20,9 +20,8 @@ pipeline {
                 sh 'curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | bash -s -- -b $GOPATH/bin v1.12.5'
                 sh 'go version'
                 sh ' cd /var/lib/jenkins/workspace/demo/beginner '
-                sh  "go run ackermann.go"
+                sh  "go run main.go"
              }
           }
        } 
     } 
-} 
