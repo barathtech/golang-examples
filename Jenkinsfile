@@ -23,5 +23,4 @@ pipeline {
                 sh  "go run ackermann.go"
              }
           }
-       }        
-    }
+       }  
